@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List</title>
+	<link rel="stylesheet" type="text/css" href="todos.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<h2>To-Do List</h2>
+	<br>
+<div class="container">
+	<button class="accordion"> <h2>Shopping List</h2> </button>
+		<div class="panel">
+			<div id="container">
+					<h1>Shopping List <i class="fa fa-plus"></i></h1>
+					<input type="text" placeholder="Add New Shopping Item">
+				
+					<ul>
+						<li><span><i class="fa fa-trash"></i></span>Chocolates</li>
+						<li><span><i class="fa fa-trash"></i></span>Chips </li>
+						<li><span><i class="fa fa-trash"></i></span> Fruits</li>
+					</ul>
+			</div>
+		</div>
+	<br>
+	<button class="accordion"> <h2>Work List</h2> </button>
+		<div class="panel">
+			<div id="container">
+					<h1>Work List <i class="fa fa-plus"></i></h1>
+					<input type="text" placeholder="Add Work To Do">
+				
+					<ul>
+						<li><span><i class="fa fa-trash"></i></span>Read the pdf</li>
+						<li><span><i class="fa fa-trash"></i></span>Study Ajax</li>
+						<li><span><i class="fa fa-trash"></i></span>Upload files</li>
+					</ul>
+			</div>
+		</div>
+	<br>
+	<button class="accordion"> <h2>Travel List</h2> </button>
+		<div class="panel">
+			<div id="container">
+					<h1>Travel List <i class="fa fa-plus"></i></h1>
+					<input type="text" placeholder="Add thing to do before travel">
+				
+					<ul>
+						<li><span><i class="fa fa-trash"></i></span>Book Flight Tickets</li>
+						<li><span><i class="fa fa-trash"></i></span>Book Hotel</li>
+						<li><span><i class="fa fa-trash"></i></span>Check Expenses</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+		<script>
+			var acc = document.getElementsByClassName("accordion");
+			var i;
+			for (i = 0; i < acc.length; i++) {
+			  acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight){
+				  panel.style.maxHeight = null;
+				} else {
+				  panel.style.maxHeight = panel.scrollHeight + "px";
+				} 
+			  });
+			}
+		</script>
+<script type="text/javascript" src="todos.js"></script>
+</body>
+</html>
